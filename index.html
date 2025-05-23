@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mini Projeto 03 - TODOLIST</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container my-4">
+        <form id="formulario">
+            <h2 class="mb-4">Adicionar Nova Tarefa</h2>
+            <div class="form-group">
+                <label for="titulo">Título:</label>
+                <input type="text" class="form-control" id="titulo" />
+            </div>
+            <div class="form-group">
+                <label for="data">Data:</label>
+                <input type="date" class="form-control" id="data" />
+            </div>
+            <div class="form-group">
+                <label for="comentario">Comentário:</label>
+                <input type="text" class="form-control" id="comentario" />
+            </div>
+            <div class="form-group">
+                <label for="prioridade">Prioridade:</label>
+                <select id="prioridade" class="form-control">
+                    <option value="Alta">Alta</option>
+                    <option value="Média">Média</option>
+                    <option value="Baixa">Baixa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="notificacao">Notificação:</label>
+                <select id="notificacao" class="form-control">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+            <button type="button" id="submeter" class="btn btn-primary mr-2">Submeter</button>
+            <button type="button" id="limparcampos" class="btn btn-secondary">Limpar</button>
+        </form>
+
+    <section id="tarefas" class="mt-5">
+        <h2 class="mb-3">Lista de Tarefas:</h2>
+        <p id="mensagem-vazia" class="text-muted font-italic">Não há tarefas cadastradas</p>
+        <div class="form-group">
+            <label for="filtro">Ordenar por:</label>
+            <select id="filtro" class="form-control w-auto">
+                <option value="criado">Data de criação</option>
+                <option value="data">Data da tarefa</option>
+                <option value="prioridade">Prioridade</option>
+                <option value="titulo">Título (A-Z)</option>
+            </select>
+        </div>
+        <div id="lista-tarefas" class="list-group"></div>
+    </section>
+
+    <!-- Seção de detalhes (inicialmente oculta) -->
+    <div id="detalhes-view" class="card mt-5" style="display: none; max-width: 700px; margin: auto;">
+        <div class="card-body">
+            <h2 class="card-title mb-4">Detalhes da Tarefa</h2>
+            <p><strong>Título:</strong> <span id="detalhes-titulo"></span></p>
+            <p><strong>Data da tarefa:</strong> <span id="detalhes-data"></span></p>
+            <p><strong>Comentário:</strong> <span id="detalhes-comentario"></span></p>
+            <p><strong>Prioridade:</strong> <span id="detalhes-prioridade"></span></p>
+            <p><strong>Data de criação:</strong> <span id="detalhes-criacao"></span></p>
+            <p><strong>Notificação:</strong> <span id="detalhes-notificacao"></span></p>
+            <p><strong>Status:</strong> <span id="detalhes-status"></span></p>
+            <button id="voltar-btn" class="btn btn-outline-primary mt-3">Voltar para a lista</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
